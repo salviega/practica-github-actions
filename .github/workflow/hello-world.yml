@@ -1,15 +1,24 @@
 name: hello-world # The name of the workflow
-run-name: ubuntu-latest # The name of the runner
-on: [push] # The event that triggers the workflow
-jobs: # The job that the workflow will do
+
+on: # The event that triggers the workflow
+  push: # On push events
+    # triggers most used: : push, pull_request, issues, issue_comment, workflow_dispatch, schedule
+    branches: # On specified branch(es)
+      - main # Specifies the main branch
+    paths: # On the following paths
+      - "**.ts" # All TypeScript files in any directory
+
+jobs: # The jobs that the workflow will perform
   build: # The name of the job
-    runs-on: ubuntu-latest # The type of runner that the job will run on
-    steps: # The sequence of tasks that the job will do
+    runs-on: ubuntu-latest # The type of runner that the job will use
+    steps: # The sequence of tasks that the job will perform
       - name: Checkout repository # The name of the task
         uses: actions/checkout@v3 # The action that the task will use
-      - name: Run a one-line script # ...
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+
+      - name: Run a one-line script # The name of the next task
+        run: echo Hello, world! # A single-line script
+
+      - name: Run a multi-line script # The name of another task
+        run: | # Starts a multi-line script block
+          echo Add other actions to build, # Line 1 of the script
+          echo test, and deploy your project. # Line 2 of the script
