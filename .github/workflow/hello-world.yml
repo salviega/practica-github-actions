@@ -1,11 +1,13 @@
-name: hello-world
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
+name: hello-world # The name of the workflow
+run-name: ubuntu-latest # The name of the runner
+on: [push] # The event that triggers the workflow
+jobs: # The job that the workflow will do
+  build: # The name of the job
+    runs-on: ubuntu-latest # The type of runner that the job will run on
+    steps: # The sequence of tasks that the job will do
+      - name: Checkout repository # The name of the task
+        uses: actions/checkout@v3 # The action that the task will use
+      - name: Run a one-line script # ...
         run: echo Hello, world!
       - name: Run a multi-line script
         run: |
