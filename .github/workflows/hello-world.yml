@@ -2,11 +2,11 @@ name: hello-world # The name of the workflow
 # Contexts: most used: github, env, vars, job, steps, runner, secrets, inputs
 on: # The event that triggers the workflow
   push:
-  # triggers most used: : push, pull_request, issues, issue_comment, workflow_dispatch, schedule
-  branches: # On specified branch(es)
-    - main # Specifies the main branch
-  paths: # On the following paths
-    - "**.ts" # All TypeScript files in any directory
+    # triggers most used: : push, pull_request, issues, issue_comment, workflow_dispatch, schedule
+    branches: # On specified branch(es)
+      - main # Specifies the main branch
+    paths: # On the following paths
+      - "**.ts" # All TypeScript files in any directory
 
 jobs: # The jobs that the workflow will perform
   build: # The name of the job
