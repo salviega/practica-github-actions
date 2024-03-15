@@ -1,19 +1,19 @@
 name: hello-world # The name of the workflow
 # Contexts: most used: github, env, vars, job, steps, runner, secrets, inputs
 on: # The event that triggers the workflow
-  [push]:
-    # triggers most used: : push, pull_request, issues, issue_comment, workflow_dispatch, schedule
-    #branches: # On specified branch(es)
-    #- main # Specifies the main branch
-    #paths:  # On the following paths
-    #- "**.ts" # All TypeScript files in any directory
+  push
+  # triggers most used: : push, pull_request, issues, issue_comment, workflow_dispatch, schedule
+  #branches: # On specified branch(es)
+  #- main # Specifies the main branch
+  #paths:  # On the following paths
+  #- "**.ts" # All TypeScript files in any directory
 
 jobs: # The jobs that the workflow will perform
   build: # The name of the job
     runs-on: ubuntu-latest # The type of runner that the job will use
     steps: # The sequence of tasks that the job will perform
       - name: Checkout repository # The name of the task
-        uses: actions/checkout@v3 # The action that the task will use
+        uses: actions/checkout@v2 # The action that the task will use
 
       - name: Run a one-line script # The name of the next task
         run: echo Hello, world! # A single-line script
