@@ -1,5 +1,5 @@
 name: hello-world # The name of the workflow
-
+# Contexts: most used: github, env, vars, job, steps, runner, secrets, inputs
 on: # The event that triggers the workflow
   push: # On push events
     # triggers most used: : push, pull_request, issues, issue_comment, workflow_dispatch, schedule
